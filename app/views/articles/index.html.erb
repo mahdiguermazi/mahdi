@@ -1,0 +1,70 @@
+
+
+
+
+
+  <div class=" w-screen bg-cover bg-center"style="background-image: url('https://images3.alphacoders.com/202/202559.jpg');"> 
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-4xl text-white">
+      <div >
+
+
+      </div>
+
+      <% @articles.each do |article| %>
+        <% unless article.archived? %>
+          <li>
+            <%= image_tag(article.image,style:"width:200px;")if article.image.attached?
+            %> 
+            </p>
+            
+            <%= link_to article.title, article%>
+            <%= link_to article.body, article %>
+         
+          </li>
+        <% end %>
+      <% end %>
+
+<div class="flex items-center mb-4">
+    <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+    <label for="default-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300 text-sky-500 text-5xl text-white">Entreprise</label>
+</div>
+<div class="flex items-center">
+    <input checked id="checked-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+    <label for="checked-checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300 text-sky-500 text-5xl text-white">start-up</label>
+</div>
+
+
+<div class="absolute">
+<h3 class="mb-4 font-semibold text-gray-900 dark text-white">Technologie:information,recrutement</h3>
+<br>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <button class="bg-slate-300 bg-rose-900 ml-auto mx-72 text-white" >
+  
+    <%= link_to "New Article", new_article_path %>
+  </button>
+  </div>
+  <button class="bg-slate-300 p-3.5 decoration-black py-px decoration-auto inline-block text-base cursor-pointer rounded-3xl bg-zinc-50 text-white">
+ <%= link_to 'LogOut', destroy_user_session_path, method: :delete %></button>
+
+    </div>
+  </div>
+</ul>
+
+
+
+
